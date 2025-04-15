@@ -1,6 +1,12 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+
 .rating {
     display: inline-flex;
-    flex-direction: row-reverse; /* Звёзды идут справа налево */
+    justify-content: center;
+    flex-direction: row-reverse;
     gap: 2px;
     font-size: 2rem;
 }
@@ -11,13 +17,23 @@
 
 .star {
     cursor: pointer;
+    font-size: 10rem;
     color: #ddd;
     transition: all 0.2s;
+    text-shadow:
+            -1px -1px 0 #000,
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000;
 }
 
-/* Подсветка при наведении на звезду И всех предыдущих (визуально справа) */
 .star:hover,
 .star:hover ~ .star,
 input:checked ~ .star {
     color: #ffd700;
+}
+
+.star:hover {
+    transform: scale(1.2);
+    rotate: 15deg;
 }
